@@ -8,8 +8,7 @@
 #define LAYER_NUMBERS 2
 #define LAYER_ARROW 3
 #define LAYER_MOUSE_BASE 4
-#define LAYER_MOUSE_HISTORY 5
-#define LAYER_SCROLL 6
+#define LAYER_SCROLL 5
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
@@ -112,19 +111,10 @@
 
         MOUSE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans          &scroll_key_tap HOME SCRL_UP    &mkp MB1        &mouse_layer_tap LAYER_SCROLL MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &scroll_key_tap END SCRL_DOWN   &trans          &trans    &trans
+&trans  &trans  &trans  &trans  &trans                      &mkp MB4          &scroll_key_tap HOME SCRL_UP    &mkp MB1        &mouse_layer_tap LAYER_SCROLL MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB5          &scroll_key_tap END SCRL_DOWN   &msc SCRL_LEFT          &msc SCRL_RIGHT    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans          &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                          &trans
-            >;
-        };
-
-        MOUSE_HISTORY {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp HOME  &mkp MB4  &mkp MB5  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp END   &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
