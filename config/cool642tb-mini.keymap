@@ -56,6 +56,15 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&mkp>;
         };
+
+        scroll_key_tap: scroll_key_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SCROLL_KEY_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&msc>;
+        };
     };
 
     keymap {
@@ -103,8 +112,8 @@
 
         MOUSE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans          &mo LAYER_SCROLL          &mkp MB1        &mouse_layer_tap LAYER_SCROLL MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans          &trans    &trans
+&trans  &trans  &trans  &trans  &trans                      &trans          &scroll_key_tap HOME SCRL_UP    &mkp MB1        &mouse_layer_tap LAYER_SCROLL MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &scroll_key_tap END SCRL_DOWN   &trans          &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans          &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                          &trans
             >;
