@@ -71,10 +71,10 @@
 
         default_layer {
             bindings = <
-&kp Q    &kp W       &kp E         &kp R         &kp T                                                    &kp Y        &kp U  &kp I      &kp O       &lt LAYER_MOUSE_BASE P
-&kp A    &kp S       &kp D         &kp F         &kp G        &kp LC(Y)              &kp PRINTSCREEN      &kp H        &kp J  &kp K      &kp L       &kp ENTER
-&kp Z    &kp X       &kp C         &kp V         &kp B        &kp LC(Z)              &kp ESC              &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
-&kp TAB  &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt LAYER_SIGNS SPACE  &mt LSHIFT DELETE      &mt RSHFT BACKSPACE  &lt LAYER_ARROW ENTER                                &kp F4
+&kp Q      &kp W       &kp E         &kp R         &kp T                                                       &kp Y                  &kp U  &kp I      &kp O       &lt LAYER_MOUSE_BASE P
+&kp A      &kp S       &kp D         &kp F         &kp G                  &none           &kp PRINTSCREEN      &kp H                  &kp J  &kp K      &kp L       &kp ENTER
+&kp Z      &kp X       &kp C         &kp V         &kp B                  &kp ESCAPE      &kp ESC              &kp N                  &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
+&kp GLOBE  &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt LAYER_SIGNS SPACE  &kp SPACE       &mt RSHFT BACKSPACE  &lt LAYER_ARROW ENTER                                &kp GLOBE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -111,10 +111,10 @@
 
         MOUSE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &mkp MB4          &scroll_key_tap HOME SCRL_UP    &mkp MB1        &mouse_layer_tap LAYER_SCROLL MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB5          &scroll_key_tap END SCRL_DOWN   &msc SCRL_LEFT          &msc SCRL_RIGHT    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans          &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                          &trans
+&trans  &trans  &trans  &trans  &trans                      &mkp MB4  &scroll_key_tap HOME SCRL_UP   &mkp MB1        &mouse_layer_tap LAYER_SCROLL MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB5  &scroll_key_tap END SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT                    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans                         &trans          &trans                             &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                                                      &trans
             >;
         };
 
