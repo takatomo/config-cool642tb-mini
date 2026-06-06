@@ -3,9 +3,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define MOUSE 4
-#define SCROLL 5
-#define NUM 6
+#define LAYER_BASE 0
+#define LAYER_SIGNS 1
+#define LAYER_NUMBERS 2
+#define LAYER_ARROW 3
+#define LAYER_MOUSE_BASE 4
+#define LAYER_MOUSE_HISTORY 5
+#define LAYER_SCROLL 6
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
@@ -30,7 +34,7 @@
         mkp_MB3 {
             bindings = <&mkp MB3>;
             key-positions = <7 8>;
-            layers = <4>;
+            layers = <LAYER_MOUSE_BASE>;
         };
     };
 
@@ -43,6 +47,15 @@
 
             tap-ms = <20>;
         };
+
+        mouse_layer_tap: mouse_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOUSE_LAYER_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&mkp>;
+        };
     };
 
     keymap {
@@ -50,10 +63,10 @@
 
         default_layer {
             bindings = <
-&kp Q    &kp W       &kp E         &kp R         &kp T                                                    &kp Y        &kp U  &kp I      &kp O       &lt 4 P
+&kp Q    &kp W       &kp E         &kp R         &kp T                                                    &kp Y        &kp U  &kp I      &kp O       &lt LAYER_MOUSE_BASE P
 &kp A    &kp S       &kp D         &kp F         &kp G        &kp LC(Y)              &kp PRINTSCREEN      &kp H        &kp J  &kp K      &kp L       &kp ENTER
 &kp Z    &kp X       &kp C         &kp V         &kp B        &kp LC(Z)              &kp ESC              &kp N        &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
-&kp TAB  &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt 1 SPACE  &mt LSHIFT DELETE      &mt RSHFT BACKSPACE  &lt 3 ENTER                                &kp F4
+&kp TAB  &kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &lt LAYER_SIGNS SPACE  &mt LSHIFT DELETE      &mt RSHFT BACKSPACE  &lt LAYER_ARROW ENTER                                &kp F4
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -90,10 +103,10 @@
 
         MOUSE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &msc SCRL_UP    &mkp MB1  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mmv MOVE_DOWN  &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans          &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mo 5                                       &trans
+&trans  &trans  &trans  &trans  &trans                      &trans          &mo LAYER_SCROLL          &mkp MB1        &mouse_layer_tap LAYER_SCROLL MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans          &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans          &trans          &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                          &trans
             >;
         };
 
