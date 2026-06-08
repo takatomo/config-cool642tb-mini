@@ -258,15 +258,6 @@
             bindings = <&mo>, <&mkp>;
         };
 
-        scroll_key_tap: scroll_key_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SCROLL_KEY_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&msc>;
-        };
-
         dot_comma_tap: dot_comma_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -461,17 +452,17 @@
 
         MOUSE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &mkp MB4  &scroll_key_tap HOME SCRL_UP   &mkp MB1        &mouse_layer_tap 5 MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB5  &scroll_key_tap END SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT         &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans                         &trans          &trans                  &trans
+&trans  &trans  &trans  &trans  &trans                      &mkp MB4  &msc SCRL_UP    &mkp MB1        &mouse_layer_tap 5 MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB5  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans          &trans          &trans                  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                                           &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp HOME  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp END   &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
