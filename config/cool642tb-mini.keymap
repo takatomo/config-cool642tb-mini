@@ -37,6 +37,32 @@
         };
     };
 
+    macros {
+        q_ctrl_lang1: q_ctrl_lang1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LANG1>, <&kp LC(Q)>;
+        };
+
+        c_ctrl_lang1: c_ctrl_lang1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LANG1>, <&kp LC(C)>;
+        };
+
+        escape_lang1: escape_lang1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LANG1>, <&kp ESCAPE>;
+        };
+    };
+
     behaviors {
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
@@ -64,6 +90,44 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&msc>;
         };
+
+        q_ctrl_only_lang1: q_ctrl_only_lang1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&q_ctrl_lang1>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        q_smart: q_smart {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&q_ctrl_only_lang1>, <&kp Q>;
+            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        c_ctrl_only_lang1: c_ctrl_only_lang1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&c_ctrl_lang1>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        c_smart: c_smart {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&c_ctrl_only_lang1>, <&kp C>;
+            mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
+
+        escape_smart: escape_smart {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&escape_lang1>, <&kp ESCAPE>;
+            mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -71,9 +135,9 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp W    &kp E    &kp R      &kp T                                            &kp Y              &kp U  &kp I      &kp O       &lt 4 P
+&q_smart   &kp W    &kp E    &kp R      &kp T                                            &kp Y              &kp U  &kp I      &kp O       &lt 4 P
 &kp A      &kp S    &kp D    &kp F      &kp G        &none                 &none         &kp H              &kp J  &kp K      &kp L       &mt LEFT_SHIFT ENTER
-&kp Z      &kp X    &kp C    &kp V      &kp B        &kp ESCAPE            &none         &kp N              &kp M  &kp COMMA  &kp PERIOD  &lt 1 MINUS
+&kp Z      &kp X    &c_smart &kp V      &kp B        &escape_smart         &kp BACKSPACE &kp N              &kp M  &kp COMMA  &kp PERIOD  &lt 1 MINUS
 &kp GLOBE  &kp F20  &kp F19  &lt 3 TAB  &lt 2 SPACE  &kp LEFT_COMMAND      &kp LEFT_ALT  &kp RIGHT_CONTROL                                &kp GLOBE
             >;
 
