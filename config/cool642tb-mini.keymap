@@ -61,6 +61,62 @@
             tap-ms = <40>;
             bindings = <&kp LANG1>, <&kp ESCAPE>;
         };
+
+        plus_spaced: plus_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE>, <&kp PLUS>, <&kp SPACE>;
+        };
+
+        minus_spaced: minus_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE>, <&kp MINUS>, <&kp SPACE>;
+        };
+
+        asterisk_spaced: asterisk_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE>, <&kp ASTERISK>, <&kp SPACE>;
+        };
+
+        slash_spaced: slash_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE>, <&kp SLASH>, <&kp SPACE>;
+        };
+
+        equal_spaced: equal_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE>, <&kp EQUAL>, <&kp SPACE>;
+        };
+
+        plus_double: plus_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp PLUS>, <&kp PLUS>;
+        };
+
+        minus_double: minus_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp MINUS>, <&kp MINUS>;
+        };
     };
 
     behaviors {
@@ -96,6 +152,41 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp DOT>, <&kp COMMA>;
+        };
+
+        plus_tap: plus_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PLUS>, <&plus_spaced>, <&plus_double>;
+        };
+
+        minus_tap: minus_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&minus_spaced>, <&minus_double>;
+        };
+
+        asterisk_tap: asterisk_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp ASTERISK>, <&asterisk_spaced>;
+        };
+
+        slash_tap: slash_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SLASH>, <&slash_spaced>;
+        };
+
+        equal_tap: equal_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp EQUAL>, <&equal_spaced>;
         };
 
         q_ctrl_only_lang1: q_ctrl_only_lang1 {
@@ -153,10 +244,10 @@
 
         NUMBERS {
             bindings = <
-&kp PLUS      &kp N7  &kp N8   &kp N9  &kp NON_US_BACKSLASH                      &kp F9  &kp F10  &kp F11  &kp F12  &none
-&kp MINUS     &kp N4  &kp N5   &kp N6  &kp UNDER             &trans      &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans
-&kp ASTERISK  &kp N1  &kp N2   &kp N3  &kp EQUAL             &trans      &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans
-&kp SLASH     &kp N0  &dot_comma_tap  &trans  &trans         &trans      &trans  &trans                             &trans
+&plus_tap      &kp N7  &kp N8   &kp N9  &kp NON_US_BACKSLASH                      &kp F9  &kp F10  &kp F11  &kp F12  &none
+&minus_tap     &kp N4  &kp N5   &kp N6  &kp UNDER             &trans      &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans
+&asterisk_tap  &kp N1  &kp N2   &kp N3  &equal_tap            &trans      &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans
+&slash_tap     &kp N0  &dot_comma_tap  &trans  &trans         &trans      &trans  &trans                             &trans
             >;
         };
 
@@ -164,8 +255,8 @@
             bindings = <
 &kp LS(EXCL)  &kp AT        &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                              &kp CARET    &kp AMPERSAND  &kp ASTERISK   &kp GRAVE     &kp TILDE
 &kp SQT       &kp LS(LBRC)  &kp LBKT       &kp LS(LPAR)  &kp LS(DQT)    &kp LS(LT)      &kp LS(GT)  &kp LS(DQT)  &kp LS(RPAR)   &kp RBKT       &kp LS(RBRC)  &kp SQT
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4   &trans          &trans      &trans       &trans         &kp LS(EXCL)  &kp QUESTION  &kp TILDE
-&bt BT_CLR    &trans        &trans         &trans        &trans         &trans          &trans      &trans                                                   &trans
+&trans       &trans        &trans         &trans        &trans         &trans          &trans      &trans       &trans         &kp LS(EXCL)  &kp QUESTION  &kp TILDE
+&trans       &trans        &trans         &trans        &trans         &trans          &trans      &trans                                                   &trans
             >;
         };
 
@@ -173,8 +264,8 @@
             bindings = <
 &kp LANG1  &kp LANG2  &trans  &trans  &trans                      &kp HOME  &kp PAGE_DOWN  &kp PAGE_DOWN  &kp END    &trans
 &trans     &trans     &trans  &trans  &trans  &trans      &trans  &kp LEFT  &kp DOWN       &kp UP         &kp RIGHT  &trans
-&trans     &trans     &trans  &trans  &trans  &trans      &trans  &trans    &trans         &trans         &trans     &trans
-&trans     &trans     &trans  &trans  &trans  &trans      &trans  &trans                                             &trans
+&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans      &trans  &trans    &trans         &trans         &trans     &trans
+&bt BT_CLR    &trans        &trans        &trans        &trans        &trans      &trans  &trans                                             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
