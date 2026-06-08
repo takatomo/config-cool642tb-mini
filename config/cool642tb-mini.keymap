@@ -221,6 +221,22 @@
             tap-ms = <40>;
             bindings = <&kp AMPERSAND &kp AMPERSAND>;
         };
+
+        pipe_spaced: pipe_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE &kp PIPE &kp SPACE>;
+        };
+
+        pipe_double: pipe_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp PIPE &kp PIPE>;
+        };
     };
 
     behaviors {
@@ -349,6 +365,13 @@
             bindings = <&kp AMPERSAND>, <&ampersand_spaced>, <&ampersand_double>;
         };
 
+        pipe_tap: pipe_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PIPE>, <&pipe_spaced>, <&pipe_double>;
+        };
+
         q_ctrl_only_lang1: q_ctrl_only_lang1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -420,7 +443,7 @@
             bindings = <
 &kp LS(EXCL)     &kp AT                &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                      &kp CARET  &ampersand_tap  &asterisk_tap  &kp GRAVE      &kp TILDE
 &single_quote_tap  &double_quote_tap  &slash_tap     &question_tap  &kp BACKSLASH  &trans      &trans  &paren_tap  &brace_tap  &bracket_tap  &angle_tap  &trans
-&plus_tap         &minus_tap          &equal_tap     &kp UNDER      &kp PIPE       &trans      &trans  &kp SEMI    &kp COLON   &kp LS(EXCL)  &question_tap  &kp TILDE
+&plus_tap         &minus_tap          &equal_tap     &kp UNDER      &pipe_tap      &trans      &trans  &kp SEMI    &kp COLON   &kp LS(EXCL)  &question_tap  &kp TILDE
 &trans        &trans             &trans         &trans            &trans         &trans      &trans  &trans                                                                             &trans
             >;
         };
