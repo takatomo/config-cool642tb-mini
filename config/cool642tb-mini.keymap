@@ -117,6 +117,110 @@
             tap-ms = <40>;
             bindings = <&kp MINUS &kp MINUS>;
         };
+
+        asterisk_double: asterisk_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp ASTERISK &kp ASTERISK>;
+        };
+
+        slash_double: slash_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SLASH &kp SLASH>;
+        };
+
+        equal_double: equal_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp EQUAL &kp EQUAL>;
+        };
+
+        single_quote_pair: single_quote_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SQT &kp SQT &kp LEFT>;
+        };
+
+        double_quote_pair: double_quote_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+        };
+
+        question_spaced: question_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE &kp QUESTION &kp SPACE>;
+        };
+
+        question_double: question_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp QUESTION &kp QUESTION>;
+        };
+
+        paren_pair: paren_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LS(LEFT_PARENTHESIS) &kp LS(RIGHT_PARENTHESIS) &kp LEFT>;
+        };
+
+        brace_pair: brace_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LS(LEFT_BRACE) &kp LS(RIGHT_BRACE) &kp LEFT>;
+        };
+
+        bracket_pair: bracket_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+        };
+
+        angle_pair: angle_pair {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LS(LESS_THAN) &kp LS(GREATER_THAN) &kp LEFT>;
+        };
+
+        ampersand_spaced: ampersand_spaced {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp SPACE &kp AMPERSAND &kp SPACE>;
+        };
+
+        ampersand_double: ampersand_double {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp AMPERSAND &kp AMPERSAND>;
+        };
     };
 
     behaviors {
@@ -172,21 +276,77 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp ASTERISK>, <&asterisk_spaced>;
+            bindings = <&kp ASTERISK>, <&asterisk_spaced>, <&asterisk_double>;
         };
 
         slash_tap: slash_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SLASH>, <&slash_spaced>;
+            bindings = <&kp SLASH>, <&slash_spaced>, <&slash_double>;
         };
 
         equal_tap: equal_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp EQUAL>, <&equal_spaced>;
+            bindings = <&kp EQUAL>, <&equal_spaced>, <&equal_double>;
+        };
+
+        single_quote_tap: single_quote_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SQT>, <&single_quote_pair>;
+        };
+
+        double_quote_tap: double_quote_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOUBLE_QUOTES>, <&double_quote_pair>;
+        };
+
+        question_tap: question_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp QUESTION>, <&question_spaced>, <&question_double>;
+        };
+
+        paren_tap: paren_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(LEFT_PARENTHESIS)>, <&kp LS(RIGHT_PARENTHESIS)>, <&paren_pair>;
+        };
+
+        brace_tap: brace_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(LEFT_BRACE)>, <&kp LS(RIGHT_BRACE)>, <&brace_pair>;
+        };
+
+        bracket_tap: bracket_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&bracket_pair>;
+        };
+
+        angle_tap: angle_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(LESS_THAN)>, <&kp LS(GREATER_THAN)>, <&angle_pair>;
+        };
+
+        ampersand_tap: ampersand_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp AMPERSAND>, <&ampersand_spaced>, <&ampersand_double>;
         };
 
         q_ctrl_only_lang1: q_ctrl_only_lang1 {
@@ -258,9 +418,9 @@
 
         SIGNS {
             bindings = <
-&kp LS(EXCL)  &kp AT             &kp LS(POUND)  &kp LS(DLLR)      &kp LS(PRCNT)                      &kp CARET                 &kp AMPERSAND       &kp ASTERISK      &kp GRAVE          &kp TILDE
-&kp SQT       &kp DOUBLE_QUOTES  &kp SLASH      &kp LS(QUESTION)  &kp BACKSLASH  &trans      &trans  &kp LS(LEFT_PARENTHESIS)  &kp LS(LEFT_BRACE)  &kp LEFT_BRACKET  &kp LS(LESS_THAN)  &trans
-&kp PLUS      &kp MINUS          &kp EQUAL      &kp UNDER         &kp PIPE       &trans      &trans  &kp SEMI                  &kp COLON           &kp LS(EXCL)      &kp QUESTION       &kp TILDE
+&kp LS(EXCL)     &kp AT                &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                      &kp CARET  &ampersand_tap  &asterisk_tap  &kp GRAVE      &kp TILDE
+&single_quote_tap  &double_quote_tap  &slash_tap     &question_tap  &kp BACKSLASH  &trans      &trans  &paren_tap  &brace_tap  &bracket_tap  &angle_tap  &trans
+&plus_tap         &minus_tap          &equal_tap     &kp UNDER      &kp PIPE       &trans      &trans  &kp SEMI    &kp COLON   &kp LS(EXCL)  &question_tap  &kp TILDE
 &trans        &trans             &trans         &trans            &trans         &trans      &trans  &trans                                                                             &trans
             >;
         };
