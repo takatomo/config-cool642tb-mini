@@ -62,6 +62,14 @@
             bindings = <&kp LANG2 &kp ESCAPE>;
         };
 
+        end_enter: end_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp END &kp ENTER>;
+        };
+
         plus_spaced: plus_spaced {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -442,7 +450,7 @@
         ARROW {
             bindings = <
 &kp LANG2     &kp LANG1     &trans        &trans        &trans                            &kp HOME  &kp PAGE_DOWN  &kp PAGE_DOWN  &kp END    &trans
-&trans        &trans        &trans        &trans        &trans        &trans      &trans  &kp LEFT  &kp DOWN       &kp UP         &kp RIGHT  &trans
+&trans        &trans        &trans        &trans        &trans        &trans      &trans  &kp LEFT  &kp DOWN       &kp UP         &kp RIGHT  &end_enter
 &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans      &trans  &trans    &trans         &trans         &trans     &trans
 &bt BT_CLR    &trans        &trans        &trans        &trans        &trans      &trans  &trans                                             &trans
             >;
