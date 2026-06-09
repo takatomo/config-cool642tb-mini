@@ -26,8 +26,9 @@
         };
 
         lang {
-            bindings = <&kp LANG2>;
+            bindings = <&lang_jk_tap>;
             key-positions = <18 19>;
+            layers = <LAYER_BASE>;
         };
 
         mkp_MB3 {
@@ -266,108 +267,115 @@
             bindings = <&mo>, <&mkp>;
         };
 
+        lang_jk_tap: lang_jk_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LANG2>, <&kp LANG1>;
+        };
+
         dot_comma_tap: dot_comma_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp DOT>, <&kp COMMA>;
         };
 
         plus_tap: plus_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp PLUS>, <&plus_spaced>, <&plus_double>;
         };
 
         minus_tap: minus_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp MINUS>, <&minus_spaced>, <&minus_double>;
         };
 
         asterisk_tap: asterisk_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp ASTERISK>, <&asterisk_spaced>, <&asterisk_double>;
         };
 
         slash_tap: slash_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp SLASH>, <&slash_spaced>, <&slash_double>;
         };
 
         equal_tap: equal_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp EQUAL>, <&equal_spaced>, <&equal_double>;
         };
 
         single_quote_tap: single_quote_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp SQT>, <&single_quote_pair>;
         };
 
         double_quote_tap: double_quote_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp DOUBLE_QUOTES>, <&double_quote_pair>;
         };
 
         question_tap: question_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp QUESTION>, <&question_spaced>, <&question_double>;
         };
 
         paren_tap: paren_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp LS(LEFT_PARENTHESIS)>, <&kp LS(RIGHT_PARENTHESIS)>, <&paren_pair>;
         };
 
         brace_tap: brace_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp LS(LEFT_BRACE)>, <&kp LS(RIGHT_BRACE)>, <&brace_pair>;
         };
 
         bracket_tap: bracket_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>, <&bracket_pair>;
         };
 
         angle_tap: angle_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp LS(LESS_THAN)>, <&kp LS(GREATER_THAN)>, <&angle_pair>;
         };
 
         ampersand_tap: ampersand_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp AMPERSAND>, <&ampersand_spaced>, <&ampersand_double>;
         };
 
         pipe_tap: pipe_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <300>;
             bindings = <&kp PIPE>, <&pipe_spaced>, <&pipe_double>;
         };
 
