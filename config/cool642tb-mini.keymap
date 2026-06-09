@@ -508,19 +508,19 @@
 
         MOUSE_BASE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &mkp MB4  &msc SCRL_UP    &mkp MB1        &mouse_layer_tap 5 MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB5  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT         &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans          &trans          &trans                  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                            &trans
+&kp HOME        &msc SCRL_UP    &kp END          &trans  &trans                      &trans  &mkp MB4  &mkp MB1       &mouse_layer_tap 5 MB2  &trans
+&msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans  &trans      &trans  &trans  &mkp MB5  &double_click  &mkp MB3                &trans
+&trans          &trans          &trans           &trans  &trans  &trans      &trans  &trans  &trans    &trans         &trans                  &trans
+&trans          &trans          &trans           &trans  &trans  &trans      &trans  &trans                                                   &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp HOME  &double_click  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp END   &trans         &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans         &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                   &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp HOME  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp END   &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                            &trans
             >;
         };
     };
