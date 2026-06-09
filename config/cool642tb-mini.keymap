@@ -336,14 +336,20 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LS(LEFT_PARENTHESIS)>, <&kp LS(RIGHT_PARENTHESIS)>, <&paren_pair>;
+            bindings =
+                <&kp LS(LEFT_PARENTHESIS)>,
+                <&kp LS(RIGHT_PARENTHESIS)>,
+                <&paren_pair>;
         };
 
         brace_tap: brace_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LS(LEFT_BRACE)>, <&kp LS(RIGHT_BRACE)>, <&brace_pair>;
+            bindings =
+                <&kp LS(LEFT_BRACE)>,
+                <&kp LS(RIGHT_BRACE)>,
+                <&brace_pair>;
         };
 
         bracket_tap: bracket_tap {
@@ -357,14 +363,20 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp LS(LESS_THAN)>, <&kp LS(GREATER_THAN)>, <&angle_pair>;
+            bindings =
+                <&kp LS(LESS_THAN)>,
+                <&kp LS(GREATER_THAN)>,
+                <&angle_pair>;
         };
 
         ampersand_tap: ampersand_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp AMPERSAND>, <&ampersand_spaced>, <&ampersand_double>;
+            bindings =
+                <&kp AMPERSAND>,
+                <&ampersand_spaced>,
+                <&ampersand_double>;
         };
 
         pipe_tap: pipe_tap {
@@ -440,10 +452,10 @@
 
         default_layer {
             bindings = <
-&q_smart   &kp W    &kp E     &kp R      &kp T                                             &kp Y              &kp U  &kp I      &kp O       &lt 4 P
-&kp A      &kp S    &kp D     &kp F      &kp G        &none                 &none          &h_smart          &kp J  &kp K      &kp L       &mt LEFT_SHIFT ENTER
-&kp Z      &kp X    &c_smart  &kp V      &kp B        &escape_smart         &kp BACKSPACE  &kp N              &kp M  &kp COMMA  &kp PERIOD  &lt 1 MINUS
-&kp GLOBE  &kp F20  &kp F19   &lt 3 TAB  &lt 2 SPACE  &kp LEFT_COMMAND      &kp LEFT_ALT   &kp RIGHT_CONTROL                                &kp GLOBE
+&q_smart   &kp W    &kp E     &kp R      &kp T                                            &kp Y              &kp U  &kp I      &kp O       &lt 4 P
+&kp A      &kp S    &kp D     &kp F      &kp G        &none                 &none         &h_smart           &kp J  &kp K      &kp L       &mt LEFT_SHIFT ENTER
+&kp Z      &kp X    &c_smart  &kp V      &kp B        &escape_smart         &none         &kp N              &kp M  &kp COMMA  &kp PERIOD  &lt 1 MINUS
+&kp GLOBE  &kp F20  &kp F19   &lt 3 TAB  &lt 2 SPACE  &kp LEFT_COMMAND      &kp LEFT_ALT  &kp RIGHT_CONTROL                                &kp GLOBE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -460,10 +472,10 @@
 
         SIGNS {
             bindings = <
-&kp LS(EXCL)     &kp AT                &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)                      &kp CARET  &ampersand_tap  &asterisk_tap  &kp GRAVE      &kp TILDE
-&single_quote_tap  &double_quote_tap  &slash_tap     &question_tap  &kp BACKSLASH  &trans      &trans  &paren_tap  &brace_tap  &bracket_tap  &angle_tap  &trans
-&plus_tap         &minus_tap          &equal_tap     &kp UNDER      &pipe_tap      &trans      &trans  &kp SEMI    &kp COLON   &kp LS(EXCL)  &question_tap  &kp TILDE
-&trans        &trans             &trans         &trans            &trans         &trans      &trans  &trans                                                                             &trans
+&kp LS(EXCL)       &kp AT             &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)                      &kp CARET   &ampersand_tap  &asterisk_tap  &kp GRAVE      &kp TILDE
+&single_quote_tap  &double_quote_tap  &slash_tap     &question_tap  &kp BACKSLASH  &trans      &trans  &paren_tap  &brace_tap      &bracket_tap   &angle_tap     &trans
+&plus_tap          &minus_tap         &equal_tap     &kp UNDER      &pipe_tap      &trans      &trans  &kp SEMI    &kp COLON       &kp LS(EXCL)   &question_tap  &kp TILDE
+&trans             &trans             &trans         &trans         &trans         &trans      &trans  &trans                                                    &trans
             >;
         };
 
@@ -483,7 +495,7 @@
 &trans  &trans  &trans  &trans  &trans                      &mkp MB4  &msc SCRL_UP    &mkp MB1        &mouse_layer_tap 5 MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB5  &msc SCRL_DOWN  &msc SCRL_LEFT  &msc SCRL_RIGHT         &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans          &trans          &trans                  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                                           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                            &trans
             >;
         };
 
@@ -491,8 +503,8 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &kp HOME  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp END   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                            &trans
             >;
         };
     };
