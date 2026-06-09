@@ -21,12 +21,12 @@
         compatible = "zmk,combos";
 
         shift_tab {
-            bindings = <&kp LANG2>;
+            bindings = <&kp LANG1>;
             key-positions = <12 13>;
         };
 
         lang {
-            bindings = <&kp LANG1>;
+            bindings = <&kp LANG2>;
             key-positions = <18 19>;
         };
 
@@ -38,28 +38,28 @@
     };
 
     macros {
-        q_ctrl_lang1: q_ctrl_lang1 {
+        q_ctrl_lang2: q_ctrl_lang2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LANG1 &kp LC(Q)>;
+            bindings = <&kp LANG2 &kp LC(Q)>;
         };
 
-        c_ctrl_lang1: c_ctrl_lang1 {
+        c_ctrl_lang2: c_ctrl_lang2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LANG1 &kp LC(C)>;
+            bindings = <&kp LANG2 &kp LC(C)>;
         };
 
-        escape_lang1: escape_lang1 {
+        escape_lang2: escape_lang2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LANG1 &kp ESCAPE>;
+            bindings = <&kp LANG2 &kp ESCAPE>;
         };
 
         plus_spaced: plus_spaced {
@@ -366,7 +366,7 @@
         q_ctrl_only_lang1: q_ctrl_only_lang1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&q_ctrl_lang1>;
+            bindings = <&kp Q>, <&q_ctrl_lang2>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
@@ -383,7 +383,7 @@
         c_ctrl_only_lang1: c_ctrl_only_lang1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp C>, <&c_ctrl_lang1>;
+            bindings = <&kp C>, <&c_ctrl_lang2>;
 
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
@@ -400,7 +400,7 @@
         escape_smart: escape_smart {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&escape_lang1>, <&kp ESCAPE>;
+            bindings = <&escape_lang2>, <&kp ESCAPE>;
 
             mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
@@ -441,7 +441,7 @@
 
         ARROW {
             bindings = <
-&kp LANG1     &kp LANG2     &trans        &trans        &trans                            &kp HOME  &kp PAGE_DOWN  &kp PAGE_DOWN  &kp END    &trans
+&kp LANG2     &kp LANG1     &trans        &trans        &trans                            &kp HOME  &kp PAGE_DOWN  &kp PAGE_DOWN  &kp END    &trans
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &kp LEFT  &kp DOWN       &kp UP         &kp RIGHT  &trans
 &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans      &trans  &trans    &trans         &trans         &trans     &trans
 &bt BT_CLR    &trans        &trans        &trans        &trans        &trans      &trans  &trans                                             &trans
