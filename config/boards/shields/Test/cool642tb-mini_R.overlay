@@ -1,7 +1,7 @@
 #include "cool642tb-mini.dtsi"
 
-#define LAYER_MOUSE_BASE 4
-#define LAYER_SCROLL 5
+#define LAYER_MOUSE_BASE 5
+#define LAYER_SCROLL 6
 
 &default_transform {
     col-offset = <6>;

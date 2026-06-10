@@ -4,11 +4,12 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define LAYER_BASE 0
-#define LAYER_SIGNS 1
+#define LAYER_BASE_WIN 1
 #define LAYER_NUMBERS 2
-#define LAYER_ARROW 3
-#define LAYER_MOUSE_BASE 4
-#define LAYER_SCROLL 5
+#define LAYER_SIGNS 3
+#define LAYER_ARROW 4
+#define LAYER_MOUSE_BASE 5
+#define LAYER_SCROLL 6
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
