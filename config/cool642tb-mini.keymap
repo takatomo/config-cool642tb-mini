@@ -287,7 +287,15 @@
         double_click: double_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mkp MB1 &mkp MB1>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&mkp MB1>,
+                <&macro_press>,
+                <&mkp MB1>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mkp MB1>;
             label = "DOUBLE_CLICK";
         };
 
