@@ -301,6 +301,46 @@
             bindings = <&kp HOME &kp ENTER &kp UP_ARROW>;
             label = "INSERT_ABOVE_WIN";
         };
+
+        bt_sel_4_win: bt_sel_4_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&bt BT_SEL 4>, <&to 1>;
+        };
+
+        bt_sel_3_default: bt_sel_3_default {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&bt BT_SEL 3>, <&to 0>;
+        };
+
+        bt_sel_2_default: bt_sel_2_default {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&bt BT_SEL 2>, <&to 0>;
+        };
+
+        bt_sel_1_default: bt_sel_1_default {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&bt BT_SEL 1>, <&to 0>;
+        };
+
+        bt_sel_0_default: bt_sel_0_default {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&bt BT_SEL 0>, <&to 0>;
+        };
     };
 
     behaviors {
@@ -596,8 +636,8 @@
             bindings = <
 &trans        &trans        &trans        &trans        &trans                            &kp HOME  &kp PAGE_DOWN  &kp PAGE_DOWN  &kp END    &trans
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &kp LEFT  &kp DOWN       &kp UP         &kp RIGHT  &trans
-&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans      &trans  &trans    &trans         &trans         &trans     &trans
-&bt BT_CLR    &trans        &trans        &trans        &trans        &trans      &trans  &trans                                             &trans
+&bt_sel_4_win  &bt_sel_3_default  &bt_sel_2_default  &bt_sel_1_default  &bt_sel_0_default  &trans      &trans  &trans    &trans         &trans         &trans     &trans
+&bt BT_CLR     &trans             &trans             &trans             &trans             &trans      &trans  &trans                                             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
