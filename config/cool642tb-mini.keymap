@@ -23,13 +23,13 @@
         lang {
             bindings = <&lang_jk_tap>;
             key-positions = <18 19>;
-            layers = <LAYER_BASE>;
+            layers = <0>;
         };
 
         mkp_MB3 {
             bindings = <&mkp MB3>;
             key-positions = <7 8>;
-            layers = <5>;
+            layers = <6>;
         };
     };
 
@@ -72,9 +72,11 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings =
-                <&macro_press &kp LEFT_COMMAND &mo LAYER_SIGNS>,
+                <&macro_press>,
+                <&kp LEFT_COMMAND &mo 3>,
                 <&macro_pause_for_release>,
-                <&macro_release &mo LAYER_SIGNS &kp LEFT_COMMAND>;
+                <&macro_release>,
+                <&mo 3 &kp LEFT_COMMAND>;
         };
 
         alt_sign_layer: alt_sign_layer {
@@ -83,9 +85,11 @@
             wait-ms = <0>;
             tap-ms = <0>;
             bindings =
-                <&macro_press &kp LEFT_ALT &mo LAYER_SIGNS>,
+                <&macro_press>,
+                <&kp LEFT_ALT &mo 3>,
                 <&macro_pause_for_release>,
-                <&macro_release &mo LAYER_SIGNS &kp LEFT_ALT>;
+                <&macro_release>,
+                <&mo 3 &kp LEFT_ALT>;
         };
 
         plus_spaced: plus_spaced {
@@ -279,6 +283,24 @@
             bindings = <&mkp MB1 &mkp MB1>;
             label = "DOUBLE_CLICK";
         };
+
+        insert_below_win: insert_below_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp END &kp ENTER>;
+            label = "INSERT_BELOW_WIN";
+        };
+
+        insert_above_win: insert_above_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp HOME &kp ENTER &kp UP_ARROW>;
+            label = "INSERT_ABOVE_WIN";
+        };
     };
 
     behaviors {
@@ -311,7 +333,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&kp P>, <&lt 4 P>;
+            bindings = <&kp P>, <&lt 5 P>;
         };
 
         enter_shift_tap: enter_shift_tap {
@@ -518,6 +540,15 @@
             mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI|MOD_LSFT|MOD_RSFT)>;
         };
+
+        h_left_insert_tap_win: h_left_insert_tap_win {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&insert_below_win>, <&insert_above_win>;
+
+            label = "H_LEFT_INSERT_TAP_WIN";
+        };
     };
 
     keymap {
@@ -525,13 +556,22 @@
 
         default_layer {
             bindings = <
-&q_smart   &kp W    &kp E     &kp R      &kp T                                            &kp Y              &kp U  &kp I      &kp O       &p_double_tap_hold_layer
-&kp A      &kp S    &kp D     &kp F      &kp G        &none                 &h_left_insert_tap  &h_smart           &kp J  &kp K      &kp L       &lt LAYER_NUMBERS SEMI
-&kp Z      &kp X    &c_smart  &kp V      &kp B        &escape_smart         &kp BACKSPACE  &kp N              &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
-&kp GLOBE  &kp F20  &lt 3 TAB  &lt 2 SPACE  &gui_sign_tap  &alt_sign_tap  &kp RIGHT_CONTROL  &enter_shift_tap                                &kp GLOBE
+&q_smart   &kp W    &kp E      &kp R        &kp T                                                 &kp Y             &kp U  &kp I      &kp O       &p_double_tap_hold_layer
+&kp A      &kp S    &kp D      &kp F        &kp G          &none              &h_left_insert_tap  &h_smart          &kp J  &kp K      &kp L       &lt 2 SEMI
+&kp Z      &kp X    &c_smart   &kp V        &kp B          &escape_smart      &kp BACKSPACE       &kp N             &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
+&kp GLOBE  &kp F20  &lt 4 TAB  &lt 3 SPACE  &gui_sign_tap  &alt_sign_tap      &kp RIGHT_CONTROL   &enter_shift_tap                                &kp GLOBE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
+        };
+
+        default_layer_win {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &h_left_insert_tap_win  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans                  &trans                          &trans
+            >;
         };
 
         NUMBERS {
@@ -554,7 +594,7 @@
 
         ARROW {
             bindings = <
-&kp LANG2     &kp LANG1     &trans        &trans        &trans                            &kp HOME  &kp PAGE_DOWN  &kp PAGE_DOWN  &kp END    &trans
+&trans        &trans        &trans        &trans        &trans                            &kp HOME  &kp PAGE_DOWN  &kp PAGE_DOWN  &kp END    &trans
 &trans        &trans        &trans        &trans        &trans        &trans      &trans  &kp LEFT  &kp DOWN       &kp UP         &kp RIGHT  &trans
 &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &trans      &trans  &trans    &trans         &trans         &trans     &trans
 &bt BT_CLR    &trans        &trans        &trans        &trans        &trans      &trans  &trans                                             &trans
@@ -565,7 +605,7 @@
 
         MOUSE_BASE {
             bindings = <
-&kp HOME        &msc SCRL_UP    &kp END          &trans  &trans                      &trans  &mkp MB4  &mkp MB1       &mouse_layer_tap 5 MB2  &trans
+&kp HOME        &msc SCRL_UP    &kp END          &trans  &trans                      &trans  &mkp MB4  &mkp MB1       &mouse_layer_tap 6 MB2  &trans
 &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans  &trans      &trans  &trans  &mkp MB5  &double_click  &mkp MB3                &trans
 &trans          &trans          &trans           &trans  &trans  &trans      &trans  &trans  &trans    &trans         &trans                  &trans
 &trans          &trans          &trans           &trans  &trans  &trans      &trans  &trans                                                   &trans
