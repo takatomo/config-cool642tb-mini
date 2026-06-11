@@ -32,12 +32,6 @@
             layers = <0>;
         };
 
-        escape_space_tab {
-            bindings = <&kp TAB>;
-            key-positions = <27 39>;
-            layers = <0 1>;
-        };
-
         mkp_MB3 {
             bindings = <&mkp MB3>;
             key-positions = <7 8>;
@@ -382,6 +376,15 @@
             bindings = <&mo>, <&mkp>;
         };
 
+        tab_escape_hold_tap: tab_escape_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAB_ESCAPE_HOLD_TAP";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            bindings = <&escape_smart>, <&kp TAB>;
+        };
+
         lang_jk_tap: lang_jk_tap {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -625,7 +628,7 @@
             bindings = <
 &q_smart   &kp W    &kp E      &kp R          &kp T                                                 &kp Y             &kp U  &kp I      &kp O       &p_double_tap_hold_layer
 &kp A      &kp S    &kp D      &kp F          &kp G          &none              &h_left_insert_tap  &h_smart          &kp J  &kp K      &kp L       &lt 2 SEMI
-&kp Z      &kp X    &c_smart   &kp V          &kp B          &escape_smart      &kp BACKSPACE       &kp N             &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
+&kp Z      &kp X    &c_smart   &kp V          &kp B          &tab_escape_hold_tap  &kp BACKSPACE       &kp N             &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
 &kp GLOBE  &kp F20  &kp F19  &alt_sign_tap  &gui_sign_tap  &space_layer_tap  &enter_shift_tap   &kp RIGHT_CONTROL                              &kp GLOBE
             >;
 
