@@ -15,11 +15,11 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <100>;
 };
 
 &lt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <100>;
 };
 
 / {
@@ -372,7 +372,7 @@
             label = "MOUSE_LAYER_TAP";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <100>;
             bindings = <&mo>, <&mkp>;
         };
 
@@ -381,7 +381,7 @@
             label = "TAB_ESCAPE_HOLD_TAP";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <100>;
             bindings = <&escape_smart>, <&kp>;
         };
 
