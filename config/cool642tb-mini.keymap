@@ -27,7 +27,7 @@
         lang {
             bindings = <&lang_jk_tap>;
             key-positions = <18 19>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         mkp_MB1 {
