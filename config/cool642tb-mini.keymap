@@ -8,8 +8,7 @@
 #define LAYER_NUMBERS 2
 #define LAYER_SIGNS 3
 #define LAYER_ARROW 4
-#define LAYER_MOUSE_BASE 5
-#define LAYER_SCROLL 6
+#define LAYER_SCROLL 5
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
 &mt {
