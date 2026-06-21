@@ -106,7 +106,10 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LC(Q) &kp LANG2>;
+            bindings =
+                <&kp LC(Q)>,
+                <&macro_pause_for_release>,
+                <&kp LANG2>;
         };
 
         c_ctrl_lang2: c_ctrl_lang2 {
@@ -114,7 +117,10 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LC(C) &kp LANG2>;
+            bindings =
+                <&kp LC(C)>,
+                <&macro_pause_for_release>,
+                <&kp LANG2>;
         };
 
         escape_lang2: escape_lang2 {
