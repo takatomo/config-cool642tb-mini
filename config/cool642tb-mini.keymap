@@ -680,10 +680,10 @@
 
         NUMBERS {
             bindings = <
-&kp KP_PLUS     &kp KP_N7  &kp KP_N8       &kp KP_N9  &kp NON_US_BACKSLASH                             &kp F9  &kp F10  &kp F11  &kp F12  &none
-&kp KP_MINUS    &kp KP_N4  &kp KP_N5       &kp KP_N6  &kp UNDER             &trans      &trans         &kp F5  &kp F6   &kp F7   &kp F8   &trans
-&kp C_AC_PASTE  &kp KP_N1  &kp KP_N2       &kp KP_N3  &kp KP_EQUAL          &trans      &trans         &kp F1  &kp F2   &kp F3   &kp F4   &trans
-&kp KP_SLASH    &kp KP_N0  &dot_comma_tap  &trans     &trans                &trans      &kp LS(ENTER)  &trans                             &trans
+&kp KP_PLUS     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp NON_US_BACKSLASH                             &kp F9  &kp F10  &kp F11  &kp F12  &none
+&kp KP_MINUS    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp UNDER             &trans      &trans         &kp F5  &kp F6   &kp F7   &kp F8   &trans
+&kp C_AC_PASTE  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_EQUAL          &trans      &trans         &kp F1  &kp F2   &kp F3   &kp F4   &trans
+&kp KP_SLASH    &kp KP_NUMBER_0  &dot_comma_tap   &trans           &trans                &trans      &kp LS(ENTER)  &trans                             &trans
             >;
         };
 
