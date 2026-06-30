@@ -103,6 +103,11 @@
             bindings = <&mo 4>;
             key-positions = <27 39>;
         };
+
+        numlock {
+            bindings = <&kp KP_NUMLOCK>;
+            key-positions = <6 7>;
+        };
     };
 
     macros {
