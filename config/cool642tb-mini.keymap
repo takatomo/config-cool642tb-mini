@@ -668,7 +668,7 @@
 &q_smart   &kp W    &kp E     &kp R             &kp T                                                  &kp Y             &kp U  &kp I      &kp O       &kp P
 &kp A      &kp S    &kp D     &kp F             &kp G           &kp BACKSPACE      &h_left_insert_tap  &h_smart          &kp J  &kp K      &kp L       &lt 2 SEMI
 &kp Z      &kp X    &c_smart  &kp V             &kp B           &kp TAB            &escape_smart       &kp N             &kp M  &kp COMMA  &kp PERIOD  &kp MINUS
-&kp GLOBE  &kp F20  &mo 3     &kp LEFT_COMMAND  &kp LEFT_SHIFT  &kp SPACE          &kp ENTER           &kp LEFT_CONTROL                                &kp LEFT_ALT
+&kp GLOBE  &kp LA(SPACE)  &mo 3     &kp LEFT_COMMAND  &kp LEFT_SHIFT  &kp SPACE          &kp ENTER           &kp LEFT_CONTROL                                &kp LEFT_ALT
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
