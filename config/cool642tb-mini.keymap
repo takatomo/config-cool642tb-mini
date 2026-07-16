@@ -108,6 +108,16 @@
             bindings = <&kp KP_NUMLOCK>;
             key-positions = <6 7>;
         };
+
+        ctrl_MB1 {
+            bindings = <&ctrl_mb1>;
+            key-positions = <6 9>;
+        };
+
+        alt_mb1 {
+            bindings = <&alt_mb1>;
+            key-positions = <9 18>;
+        };
     };
 
     macros {
@@ -286,7 +296,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LS(LEFT_PARENTHESIS) &kp LS(RIGHT_PARENTHESIS) &kp LEFT>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
         };
 
         brace_pair: brace_pair {
@@ -294,7 +304,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LS(LEFT_BRACE) &kp LS(RIGHT_BRACE) &kp LEFT>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
         };
 
         bracket_pair: bracket_pair {
@@ -310,7 +320,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&kp LS(LESS_THAN) &kp LS(GREATER_THAN) &kp LEFT>;
+            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>;
         };
 
         ampersand_spaced: ampersand_spaced {
@@ -439,6 +449,20 @@
                 <&kp LEFT_COMMAND &kp RIGHT_COMMAND>;
 
             label = "BOTH_COMMAND";
+        };
+
+        ctrl_mb1: ctrl_mb1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &mkp MB1>;
+            label = "CTRL_MB1";
+        };
+
+        alt_mb1: alt_mb1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &mkp MB1>;
+            label = "ALT_MB1";
         };
     };
 
