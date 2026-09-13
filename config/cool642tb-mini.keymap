@@ -403,7 +403,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&to 1 &bt BT_SEL 4>;
+            bindings = <&to 1 &bt_english 4>;
         };
 
         bt_sel_3_win: bt_sel_3_win {
@@ -411,7 +411,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&to 1 &bt BT_SEL 3>;
+            bindings = <&to 1 &bt_english 3>;
         };
 
         bt_sel_2_default: bt_sel_2_default {
@@ -419,7 +419,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&to 0 &bt BT_SEL 2>;
+            bindings = <&to 0 &bt_english 2>;
         };
 
         bt_sel_1_default: bt_sel_1_default {
@@ -427,7 +427,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&to 0 &bt BT_SEL 1>;
+            bindings = <&to 0 &bt_english 1>;
         };
 
         bt_sel_0_default: bt_sel_0_default {
@@ -435,7 +435,7 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings = <&to 0 &bt BT_SEL 0>;
+            bindings = <&to 0 &bt_english 0>;
         };
 
         both_command: both_command {
@@ -483,6 +483,12 @@
     };
 
     behaviors {
+        // Bluetooth接続先が入力を受け取れる状態になってから英数に切り替える。
+        bt_english: bt_english {
+            compatible = "zmk,behavior-bt-english";
+            #binding-cells = <1>;
+        };
+
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";

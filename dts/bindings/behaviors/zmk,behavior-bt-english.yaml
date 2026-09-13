@@ -1,0 +1,3 @@
+description: Bluetooth 接続先を選び、接続準備完了後に英数キーを送信する
+compatible: "zmk,behavior-bt-english"
+include: one_param.yaml
